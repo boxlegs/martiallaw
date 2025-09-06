@@ -29,7 +29,7 @@ public class MartialLawSpell : BaseUnityPlugin
 
     internal static new ManualLogSource Logger { get; private set; }
 
-    private const string VersionString = "1.0.0";
+    private const string VersionString = "1.0.2";
     private static Harmony? Harmony;
     public static string modsync = "all";
 
