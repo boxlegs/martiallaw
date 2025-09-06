@@ -429,5 +429,5 @@ FodyWeavers.xsd
 tools
 packageFiles
 References
-settings.BizTalk
-
+settings.bat
+old

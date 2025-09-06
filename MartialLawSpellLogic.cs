@@ -14,7 +14,6 @@ namespace MartialLawSpell;
 // This is all ripped from 
 internal class MartialLawSpellLogic : SpellLogic
 {
-    private static bool active; // Tracks if this spell is currently active (static so only one instance can be active at a time)
     private AudioClip? clip; // Audio clip for the spell effect (static to load once and share across instances)
 
     // Configuration parameters for the spell
@@ -26,8 +25,6 @@ internal class MartialLawSpellLogic : SpellLogic
 
     public override bool CastSpell(PlayerMovement caster, PageController page, Vector3 spawnPos, Vector3 viewDirectionVector, int castingLevel)
     {
-
-
 
         // clip = Assembly.GetExecutingAssembly().LoadWavFromResources($"MartialLawSpell.Resources.Sounds.sound{UnityEngine.Random.RandomRangeInt(1, 3)}.wav");
         PlayClip();

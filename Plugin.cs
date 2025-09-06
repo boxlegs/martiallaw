@@ -42,9 +42,10 @@ public class MartialLawSpell : BaseUnityPlugin
         Harmony = new(PluginInfo.PLUGIN_GUID);
         Harmony.PatchAll();
 
-        Logger.LogInfo($"Plugin {PluginInfo.PLUGIN_GUID} is loading...");
+        Logger.LogInfo($"Plugin {PluginInfo.PLUGIN_NAME} ({PluginInfo.PLUGIN_GUID}) is loading...");
 
         BlackMagicManager.RegisterSpell(this, typeof(MartialLawSpellData), typeof(MartialLawSpellLogic));
 
+        Logger.LogInfo($"Plugin {PluginInfo.PLUGIN_NAME} ({PluginInfo.PLUGIN_GUID}) loaded successfully.");
     }
 }
