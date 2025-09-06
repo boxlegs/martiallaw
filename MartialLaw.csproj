@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <!-- Rename to match the name of your mod -->
+    <AssemblyName>MartialLaw</AssemblyName>
+    <!-- Rename to match the name of your mod -->
+    <Product>MartialLaw</Product>
+    <Version>1.0.0</Version>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
+    <!-- Prevent MSBuild from polluting our src directory  -->
+    <RestoreAdditionalProjectSources>
+      https://api.nuget.org/v3/index.json;
+      https://nuget.bepinex.dev/v3/index.json;
+      https://nuget.samboy.dev/v3/index.json
+    </RestoreAdditionalProjectSources>
+    <!-- Rename to match the name of your mod -->
+    <RootNamespace>MartialLawSpell</RootNamespace>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+  <!-- NuGet Packages. The minimal packages needed for a mod  -->
+    <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
+    <PackageReference Include="BepInEx.Core" Version="5.*" />
+    <PackageReference Include="Lib.Harmony" Version="2.3.6" />
+    <PackageReference Include="UnityEngine.Modules" Version="2023.2.20" IncludeAssets="compile" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <!-- Embed all files from the Resources folder into the dll: Unity AssetBundles, Images, etc -->
+	  <EmbeddedResource Include="Resources\**\*" />
+  </ItemGroup>
+
+
+	<ItemGroup>
+    <!-- Assembly-CSharp from the MageArena files in steam  -->
+    <Reference Include="Assembly-CSharp">
+      <HintPath>D:\Games\steamapps\common\Mage Arena\MageArena_Data\Managed\Assembly-CSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+	<ItemGroup>
+    <!-- Any dll files in the References folder are automatically included into your project -->
+		<Reference Include="References\*.dll" />
+	</ItemGroup>
+
+</Project>

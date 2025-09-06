@@ -1,0 +1,2 @@
+# Martial Law Spell
+This is a play on the "Hellfire" spell mod made by [D1GQ](https://github.com/D1GQ/BlackMagicAPI), who also made the [BlackMagicAPI](https://github.com/D1GQ/BlackMagicAPI) that enables this kind of tomfoolery. Pretty much all of the logic/data is ripped straight from Hellfire bar a few tweaked values.
